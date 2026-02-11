@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bomb Defuser - Cyber Mission</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@500;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=999">
+</head>
+<body>
+    <div class="mission-control">
+        <h1>BOMB DEFUSER 💣</h1>
+
+        <div id="auth-screen">
+            <div id="login-form">
+                <h2>AGENT ACCESS</h2>
+                <h3>LOGIN</h3>
+                <input type="text" id="login-user" placeholder="Username">
+                <input type="password" id="login-pass" placeholder="Password">
+                <br><br>
+                <button onclick="handleAuth('login')">LOGIN</button>
+                <p style="font-size: 13px; margin-top: 15px;">New Agent? <a href="javascript:void(0)" onclick="toggleAuthMode('register')" style="color: #ffff00; text-decoration: none;">[ REGISTER HERE ]</a></p>
+            </div>
+
+            <div id="register-form" style="display:none;">
+                <h2>AGENT REGISTRATION</h2>
+                <input type="text" id="reg-user" placeholder="Choose Username">
+                <input type="password" id="reg-pass" placeholder="Choose Password">
+                <br><br>
+                <button onclick="handleAuth('register')">REGISTER</button>
+                <p style="font-size: 13px; margin-top: 15px;">Already have an account? <a href="javascript:void(0)" onclick="toggleAuthMode('login')" style="color: #ffff00; text-decoration: none;">[ LOGIN HERE ]</a></p>
+            </div>
+        </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
