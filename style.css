@@ -1,0 +1,119 @@
+/* --- Global Styles --- */
+:root {
+    --cyan: #00f2ff;
+    --blue-dark: #0066ff;
+    --pink: #ff00de;
+    --purple-dark: #7000ff;
+    --bg-overlay: rgba(15, 5, 25, 0.4); 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    
+    /* BACKGROUND IMAGE SETTINGS */
+    background-color: #1a0b2e; 
+    background-image: 
+        linear-gradient(var(--bg-overlay), var(--bg-overlay)), 
+        url('1.webp');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* --- THE GLASS BOX (Transparent Center Panel) --- */
+.mission-control {
+    text-align: center;
+    border: 2px solid rgba(0, 242, 255, 0.4);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    
+    /* Frosted Glass Effect */
+    backdrop-filter: blur(15px) saturate(160%); 
+    -webkit-backdrop-filter: blur(15px) saturate(160%);
+    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+    width: 550px; 
+    position: relative;
+    border-radius: 20px;
+}
+
+h1 {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+
+
+/* --- ROUNDED GRADIENT BUTTONS --- */
+button {
+    background: linear-gradient(to right, #7000ff 0%, #ff00de 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 8px 4px;
+    transition: 0.3s ease;
+    border-radius: 15px !important; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    clip-path: none !important; 
+}
+
+button:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 20px rgba(255, 0, 222, 0.6);
+    transform: scale(1.05) translateY(-2px);
+}
+
+button[onclick*="logout"] {
+    background: linear-gradient(to right, #8b0000, #ff0000);
+}
+
+/* --- Keypad & Inputs --- */
+input {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--cyan);
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    width: 80%;
+    outline: none;
+    border-radius: 10px;
+}
+
+.hidden { 
+    display: none !important; 
+}
+
+/* --- ANIMATIONS --- */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.shake {
+    animation: shakeAnim 0.4s ease-in-out;
+}
+
+@keyframes shakeAnim {
+    0%, 100% { transform: translateX(0); border-color: var(--cyan); }
+    20%, 60% { transform: translateX(-10px); border-color: #ff0000; }
+    40%, 80% { transform: translateX(10px); border-color: #ff0000; }
+}
